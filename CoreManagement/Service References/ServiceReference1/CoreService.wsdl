@@ -1,0 +1,954 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CoreService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8888/iTactixCoreService?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8888/iTactixCoreService?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8888/iTactixCoreService?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BusinessObjects" />
+      <xsd:import schemaLocation="http://localhost:8888/iTactixCoreService?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/EntitySpaces.Core" />
+      <xsd:import schemaLocation="http://localhost:8888/iTactixCoreService?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:8888/iTactixCoreService?xsd=xsd5" namespace="www.entityspaces.net" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="CoreService_CollectDelta_InputMessage">
+    <wsdl:part name="parameters" element="tns:CollectDelta" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_CollectDelta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CollectDeltaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_VerifyLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyLogin" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_VerifyLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_UpdateScheduleForScreens_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateScheduleForScreens" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_UpdateScheduleForScreens_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateScheduleForScreensResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_UpdateScheduleForGroups_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateScheduleForGroups" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_UpdateScheduleForGroups_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateScheduleForGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_CollectScheduleForScreen_InputMessage">
+    <wsdl:part name="parameters" element="tns:CollectScheduleForScreen" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_CollectScheduleForScreen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CollectScheduleForScreenResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_CollectScheduleForScreenGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:CollectScheduleForScreenGroup" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_CollectScheduleForScreenGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CollectScheduleForScreenGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_CollectLoopContentForZone_InputMessage">
+    <wsdl:part name="parameters" element="tns:CollectLoopContentForZone" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_CollectLoopContentForZone_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CollectLoopContentForZoneResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_CollectLoopContentForZoneByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:CollectLoopContentForZoneByName" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_CollectLoopContentForZoneByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CollectLoopContentForZoneByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_ApplyLoopContentCollection_InputMessage">
+    <wsdl:part name="parameters" element="tns:ApplyLoopContentCollection" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_ApplyLoopContentCollection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ApplyLoopContentCollectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_TESTInsertGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:TESTInsertGroup" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_TESTInsertGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TESTInsertGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_CollectSCreenGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:CollectSCreenGroup" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_CollectSCreenGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CollectSCreenGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_CollectLoopContentCollection_InputMessage">
+    <wsdl:part name="parameters" element="tns:CollectLoopContentCollection" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_CollectLoopContentCollection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CollectLoopContentCollectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_CollectTemplates_InputMessage">
+    <wsdl:part name="parameters" element="tns:CollectTemplates" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_CollectTemplates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CollectTemplatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_CollectZonesForTemplate_InputMessage">
+    <wsdl:part name="parameters" element="tns:CollectZonesForTemplate" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_CollectZonesForTemplate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CollectZonesForTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_CollectZonesForThisTemplateName_InputMessage">
+    <wsdl:part name="parameters" element="tns:CollectZonesForThisTemplateName" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_CollectZonesForThisTemplateName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CollectZonesForThisTemplateNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_ChangeMedia_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeMedia" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_ChangeMedia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeMediaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_InsertScheduleItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertScheduleItem" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_InsertScheduleItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertScheduleItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_InsertMedia_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertMedia" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_InsertMedia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertMediaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_InsertTemplate_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertTemplate" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_InsertTemplate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_RemoveTemplate_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveTemplate" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_RemoveTemplate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_UpdateScheduleItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateScheduleItem" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_UpdateScheduleItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateScheduleItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_ChangeTemplate_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeTemplate" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_ChangeTemplate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_CollectMedia_InputMessage">
+    <wsdl:part name="parameters" element="tns:CollectMedia" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_CollectMedia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CollectMediaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_CollectLoops_InputMessage">
+    <wsdl:part name="parameters" element="tns:CollectLoops" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_CollectLoops_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CollectLoopsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_CollectThisLoop_InputMessage">
+    <wsdl:part name="parameters" element="tns:CollectThisLoop" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_CollectThisLoop_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CollectThisLoopResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_InsertLoop_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertLoop" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_InsertLoop_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertLoopResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_RemoveLoop_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveLoop" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_RemoveLoop_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveLoopResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_CollectScreenGroups_InputMessage">
+    <wsdl:part name="parameters" element="tns:CollectScreenGroups" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_CollectScreenGroups_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CollectScreenGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_CollectScreens_InputMessage">
+    <wsdl:part name="parameters" element="tns:CollectScreens" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_CollectScreens_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CollectScreensResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_RegisterDisplayClientLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterDisplayClientLogin" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_RegisterDisplayClientLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterDisplayClientLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_InsertScreen_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertScreen" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_InsertScreen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertScreenResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_CollectUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:CollectUsers" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_CollectUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CollectUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_CollectCSScreens_InputMessage">
+    <wsdl:part name="parameters" element="tns:CollectCSScreens" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_CollectCSScreens_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CollectCSScreensResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_InsertUpdateCSDirection_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateCSDirection" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_InsertUpdateCSDirection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateCSDirectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_InsertUpdateCSMedia_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateCSMedia" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_InsertUpdateCSMedia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateCSMediaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_CollectCSMediaWithThumbs_InputMessage">
+    <wsdl:part name="parameters" element="tns:CollectCSMediaWithThumbs" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_CollectCSMediaWithThumbs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CollectCSMediaWithThumbsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_CollectCSDirections_InputMessage">
+    <wsdl:part name="parameters" element="tns:CollectCSDirections" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_CollectCSDirections_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CollectCSDirectionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_RemoveUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveUser" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_RemoveUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_RemoveMedia_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveMedia" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_RemoveMedia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveMediaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_RemoveTicker_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveTicker" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_RemoveTicker_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveTickerResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_InsertOrUpdateTicker_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrUpdateTicker" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_InsertOrUpdateTicker_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrUpdateTickerResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_InsertUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUser" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_InsertUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_InsertCSScreen_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCSScreen" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_InsertCSScreen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCSScreenResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_ChangeUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeUser" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_ChangeUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_ChangeCSScreen_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeCSScreen" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_ChangeCSScreen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeCSScreenResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_RemoveGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveGroup" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_RemoveGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_ChangeScreenGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeScreenGroup" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_ChangeScreenGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeScreenGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_RemoveScreen_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveScreen" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_RemoveScreen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveScreenResponse" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_InsertScreenGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertScreenGroup" />
+  </wsdl:message>
+  <wsdl:message name="CoreService_InsertScreenGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertScreenGroupResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CoreService">
+    <wsdl:operation name="CollectDelta">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/CollectDelta" message="tns:CoreService_CollectDelta_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/CollectDeltaResponse" message="tns:CoreService_CollectDelta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyLogin">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/VerifyLogin" message="tns:CoreService_VerifyLogin_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/VerifyLoginResponse" message="tns:CoreService_VerifyLogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateScheduleForScreens">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/UpdateScheduleForScreens" message="tns:CoreService_UpdateScheduleForScreens_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/UpdateScheduleForScreensResponse" message="tns:CoreService_UpdateScheduleForScreens_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateScheduleForGroups">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/UpdateScheduleForGroups" message="tns:CoreService_UpdateScheduleForGroups_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/UpdateScheduleForGroupsResponse" message="tns:CoreService_UpdateScheduleForGroups_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CollectScheduleForScreen">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/CollectScheduleForScreen" message="tns:CoreService_CollectScheduleForScreen_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/CollectScheduleForScreenResponse" message="tns:CoreService_CollectScheduleForScreen_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CollectScheduleForScreenGroup">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/CollectScheduleForScreenGroup" message="tns:CoreService_CollectScheduleForScreenGroup_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/CollectScheduleForScreenGroupResponse" message="tns:CoreService_CollectScheduleForScreenGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CollectLoopContentForZone">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/CollectLoopContentForZone" message="tns:CoreService_CollectLoopContentForZone_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/CollectLoopContentForZoneResponse" message="tns:CoreService_CollectLoopContentForZone_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CollectLoopContentForZoneByName">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/CollectLoopContentForZoneByName" message="tns:CoreService_CollectLoopContentForZoneByName_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/CollectLoopContentForZoneByNameResponse" message="tns:CoreService_CollectLoopContentForZoneByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ApplyLoopContentCollection">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/ApplyLoopContentCollection" message="tns:CoreService_ApplyLoopContentCollection_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/ApplyLoopContentCollectionResponse" message="tns:CoreService_ApplyLoopContentCollection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TESTInsertGroup">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/TESTInsertGroup" message="tns:CoreService_TESTInsertGroup_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/TESTInsertGroupResponse" message="tns:CoreService_TESTInsertGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CollectSCreenGroup">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/CollectSCreenGroup" message="tns:CoreService_CollectSCreenGroup_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/CollectSCreenGroupResponse" message="tns:CoreService_CollectSCreenGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CollectLoopContentCollection">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/CollectLoopContentCollection" message="tns:CoreService_CollectLoopContentCollection_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/CollectLoopContentCollectionResponse" message="tns:CoreService_CollectLoopContentCollection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CollectTemplates">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/CollectTemplates" message="tns:CoreService_CollectTemplates_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/CollectTemplatesResponse" message="tns:CoreService_CollectTemplates_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CollectZonesForTemplate">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/CollectZonesForTemplate" message="tns:CoreService_CollectZonesForTemplate_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/CollectZonesForTemplateResponse" message="tns:CoreService_CollectZonesForTemplate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CollectZonesForThisTemplateName">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/CollectZonesForThisTemplateName" message="tns:CoreService_CollectZonesForThisTemplateName_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/CollectZonesForThisTemplateNameResponse" message="tns:CoreService_CollectZonesForThisTemplateName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeMedia">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/ChangeMedia" message="tns:CoreService_ChangeMedia_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/ChangeMediaResponse" message="tns:CoreService_ChangeMedia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertScheduleItem">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/InsertScheduleItem" message="tns:CoreService_InsertScheduleItem_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/InsertScheduleItemResponse" message="tns:CoreService_InsertScheduleItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertMedia">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/InsertMedia" message="tns:CoreService_InsertMedia_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/InsertMediaResponse" message="tns:CoreService_InsertMedia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertTemplate">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/InsertTemplate" message="tns:CoreService_InsertTemplate_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/InsertTemplateResponse" message="tns:CoreService_InsertTemplate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveTemplate">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/RemoveTemplate" message="tns:CoreService_RemoveTemplate_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/RemoveTemplateResponse" message="tns:CoreService_RemoveTemplate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateScheduleItem">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/UpdateScheduleItem" message="tns:CoreService_UpdateScheduleItem_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/UpdateScheduleItemResponse" message="tns:CoreService_UpdateScheduleItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeTemplate">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/ChangeTemplate" message="tns:CoreService_ChangeTemplate_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/ChangeTemplateResponse" message="tns:CoreService_ChangeTemplate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CollectMedia">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/CollectMedia" message="tns:CoreService_CollectMedia_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/CollectMediaResponse" message="tns:CoreService_CollectMedia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CollectLoops">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/CollectLoops" message="tns:CoreService_CollectLoops_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/CollectLoopsResponse" message="tns:CoreService_CollectLoops_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CollectThisLoop">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/CollectThisLoop" message="tns:CoreService_CollectThisLoop_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/CollectThisLoopResponse" message="tns:CoreService_CollectThisLoop_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertLoop">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/InsertLoop" message="tns:CoreService_InsertLoop_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/InsertLoopResponse" message="tns:CoreService_InsertLoop_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveLoop">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/RemoveLoop" message="tns:CoreService_RemoveLoop_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/RemoveLoopResponse" message="tns:CoreService_RemoveLoop_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CollectScreenGroups">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/CollectScreenGroups" message="tns:CoreService_CollectScreenGroups_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/CollectScreenGroupsResponse" message="tns:CoreService_CollectScreenGroups_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CollectScreens">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/CollectScreens" message="tns:CoreService_CollectScreens_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/CollectScreensResponse" message="tns:CoreService_CollectScreens_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterDisplayClientLogin">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/RegisterDisplayClientLogin" message="tns:CoreService_RegisterDisplayClientLogin_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/RegisterDisplayClientLoginResponse" message="tns:CoreService_RegisterDisplayClientLogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertScreen">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/InsertScreen" message="tns:CoreService_InsertScreen_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/InsertScreenResponse" message="tns:CoreService_InsertScreen_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CollectUsers">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/CollectUsers" message="tns:CoreService_CollectUsers_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/CollectUsersResponse" message="tns:CoreService_CollectUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CollectCSScreens">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/CollectCSScreens" message="tns:CoreService_CollectCSScreens_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/CollectCSScreensResponse" message="tns:CoreService_CollectCSScreens_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateCSDirection">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/InsertUpdateCSDirection" message="tns:CoreService_InsertUpdateCSDirection_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/InsertUpdateCSDirectionResponse" message="tns:CoreService_InsertUpdateCSDirection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateCSMedia">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/InsertUpdateCSMedia" message="tns:CoreService_InsertUpdateCSMedia_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/InsertUpdateCSMediaResponse" message="tns:CoreService_InsertUpdateCSMedia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CollectCSMediaWithThumbs">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/CollectCSMediaWithThumbs" message="tns:CoreService_CollectCSMediaWithThumbs_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/CollectCSMediaWithThumbsResponse" message="tns:CoreService_CollectCSMediaWithThumbs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CollectCSDirections">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/CollectCSDirections" message="tns:CoreService_CollectCSDirections_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/CollectCSDirectionsResponse" message="tns:CoreService_CollectCSDirections_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUser">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/RemoveUser" message="tns:CoreService_RemoveUser_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/RemoveUserResponse" message="tns:CoreService_RemoveUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveMedia">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/RemoveMedia" message="tns:CoreService_RemoveMedia_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/RemoveMediaResponse" message="tns:CoreService_RemoveMedia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveTicker">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/RemoveTicker" message="tns:CoreService_RemoveTicker_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/RemoveTickerResponse" message="tns:CoreService_RemoveTicker_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrUpdateTicker">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/InsertOrUpdateTicker" message="tns:CoreService_InsertOrUpdateTicker_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/InsertOrUpdateTickerResponse" message="tns:CoreService_InsertOrUpdateTicker_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUser">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/InsertUser" message="tns:CoreService_InsertUser_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/InsertUserResponse" message="tns:CoreService_InsertUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCSScreen">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/InsertCSScreen" message="tns:CoreService_InsertCSScreen_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/InsertCSScreenResponse" message="tns:CoreService_InsertCSScreen_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeUser">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/ChangeUser" message="tns:CoreService_ChangeUser_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/ChangeUserResponse" message="tns:CoreService_ChangeUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeCSScreen">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/ChangeCSScreen" message="tns:CoreService_ChangeCSScreen_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/ChangeCSScreenResponse" message="tns:CoreService_ChangeCSScreen_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveGroup">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/RemoveGroup" message="tns:CoreService_RemoveGroup_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/RemoveGroupResponse" message="tns:CoreService_RemoveGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeScreenGroup">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/ChangeScreenGroup" message="tns:CoreService_ChangeScreenGroup_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/ChangeScreenGroupResponse" message="tns:CoreService_ChangeScreenGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveScreen">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/RemoveScreen" message="tns:CoreService_RemoveScreen_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/RemoveScreenResponse" message="tns:CoreService_RemoveScreen_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertScreenGroup">
+      <wsdl:input wsam:Action="http://tempuri.org/CoreService/InsertScreenGroup" message="tns:CoreService_InsertScreenGroup_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/CoreService/InsertScreenGroupResponse" message="tns:CoreService_InsertScreenGroup_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_CoreService" type="tns:CoreService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CollectDelta">
+      <soap:operation soapAction="http://tempuri.org/CoreService/CollectDelta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyLogin">
+      <soap:operation soapAction="http://tempuri.org/CoreService/VerifyLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateScheduleForScreens">
+      <soap:operation soapAction="http://tempuri.org/CoreService/UpdateScheduleForScreens" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateScheduleForGroups">
+      <soap:operation soapAction="http://tempuri.org/CoreService/UpdateScheduleForGroups" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CollectScheduleForScreen">
+      <soap:operation soapAction="http://tempuri.org/CoreService/CollectScheduleForScreen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CollectScheduleForScreenGroup">
+      <soap:operation soapAction="http://tempuri.org/CoreService/CollectScheduleForScreenGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CollectLoopContentForZone">
+      <soap:operation soapAction="http://tempuri.org/CoreService/CollectLoopContentForZone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CollectLoopContentForZoneByName">
+      <soap:operation soapAction="http://tempuri.org/CoreService/CollectLoopContentForZoneByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApplyLoopContentCollection">
+      <soap:operation soapAction="http://tempuri.org/CoreService/ApplyLoopContentCollection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TESTInsertGroup">
+      <soap:operation soapAction="http://tempuri.org/CoreService/TESTInsertGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CollectSCreenGroup">
+      <soap:operation soapAction="http://tempuri.org/CoreService/CollectSCreenGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CollectLoopContentCollection">
+      <soap:operation soapAction="http://tempuri.org/CoreService/CollectLoopContentCollection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CollectTemplates">
+      <soap:operation soapAction="http://tempuri.org/CoreService/CollectTemplates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CollectZonesForTemplate">
+      <soap:operation soapAction="http://tempuri.org/CoreService/CollectZonesForTemplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CollectZonesForThisTemplateName">
+      <soap:operation soapAction="http://tempuri.org/CoreService/CollectZonesForThisTemplateName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeMedia">
+      <soap:operation soapAction="http://tempuri.org/CoreService/ChangeMedia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertScheduleItem">
+      <soap:operation soapAction="http://tempuri.org/CoreService/InsertScheduleItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertMedia">
+      <soap:operation soapAction="http://tempuri.org/CoreService/InsertMedia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertTemplate">
+      <soap:operation soapAction="http://tempuri.org/CoreService/InsertTemplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveTemplate">
+      <soap:operation soapAction="http://tempuri.org/CoreService/RemoveTemplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateScheduleItem">
+      <soap:operation soapAction="http://tempuri.org/CoreService/UpdateScheduleItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeTemplate">
+      <soap:operation soapAction="http://tempuri.org/CoreService/ChangeTemplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CollectMedia">
+      <soap:operation soapAction="http://tempuri.org/CoreService/CollectMedia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CollectLoops">
+      <soap:operation soapAction="http://tempuri.org/CoreService/CollectLoops" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CollectThisLoop">
+      <soap:operation soapAction="http://tempuri.org/CoreService/CollectThisLoop" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertLoop">
+      <soap:operation soapAction="http://tempuri.org/CoreService/InsertLoop" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveLoop">
+      <soap:operation soapAction="http://tempuri.org/CoreService/RemoveLoop" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CollectScreenGroups">
+      <soap:operation soapAction="http://tempuri.org/CoreService/CollectScreenGroups" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CollectScreens">
+      <soap:operation soapAction="http://tempuri.org/CoreService/CollectScreens" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterDisplayClientLogin">
+      <soap:operation soapAction="http://tempuri.org/CoreService/RegisterDisplayClientLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertScreen">
+      <soap:operation soapAction="http://tempuri.org/CoreService/InsertScreen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CollectUsers">
+      <soap:operation soapAction="http://tempuri.org/CoreService/CollectUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CollectCSScreens">
+      <soap:operation soapAction="http://tempuri.org/CoreService/CollectCSScreens" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateCSDirection">
+      <soap:operation soapAction="http://tempuri.org/CoreService/InsertUpdateCSDirection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateCSMedia">
+      <soap:operation soapAction="http://tempuri.org/CoreService/InsertUpdateCSMedia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CollectCSMediaWithThumbs">
+      <soap:operation soapAction="http://tempuri.org/CoreService/CollectCSMediaWithThumbs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CollectCSDirections">
+      <soap:operation soapAction="http://tempuri.org/CoreService/CollectCSDirections" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUser">
+      <soap:operation soapAction="http://tempuri.org/CoreService/RemoveUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveMedia">
+      <soap:operation soapAction="http://tempuri.org/CoreService/RemoveMedia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveTicker">
+      <soap:operation soapAction="http://tempuri.org/CoreService/RemoveTicker" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrUpdateTicker">
+      <soap:operation soapAction="http://tempuri.org/CoreService/InsertOrUpdateTicker" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUser">
+      <soap:operation soapAction="http://tempuri.org/CoreService/InsertUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCSScreen">
+      <soap:operation soapAction="http://tempuri.org/CoreService/InsertCSScreen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeUser">
+      <soap:operation soapAction="http://tempuri.org/CoreService/ChangeUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeCSScreen">
+      <soap:operation soapAction="http://tempuri.org/CoreService/ChangeCSScreen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveGroup">
+      <soap:operation soapAction="http://tempuri.org/CoreService/RemoveGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeScreenGroup">
+      <soap:operation soapAction="http://tempuri.org/CoreService/ChangeScreenGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveScreen">
+      <soap:operation soapAction="http://tempuri.org/CoreService/RemoveScreen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertScreenGroup">
+      <soap:operation soapAction="http://tempuri.org/CoreService/InsertScreenGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CoreService">
+    <wsdl:port name="BasicHttpBinding_CoreService" binding="tns:BasicHttpBinding_CoreService">
+      <soap:address location="http://localhost:8888/iTactixCoreService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
