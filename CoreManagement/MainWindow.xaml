@@ -159,7 +159,7 @@
 				<StackPanel Height="Auto" VerticalAlignment="Stretch">
                     <Label x:Name="labelImage" Content="{Binding Name}" FontSize="10" FontFamily="Grover Italic" Background="Black" Foreground="White" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Padding="3,0,3,0" />    
 					<Border BorderBrush="DarkGray" BorderThickness="0.5" Margin="4,4,4,4">
-					   <Image Margin="0" Source="{Binding Snapshot}" Width="{Binding Value, ElementName=sliderImageSize}" Height="{Binding Value, ElementName=sliderImageSize}" Stretch="UniformToFill" />	
+					   <Image Margin="0" Source="{Binding Snapshot}" Width="{Binding Value, ElementName=sliderImageSize}" Height="{Binding Value*0.7, ElementName=sliderImageSize}" Stretch="Uniform" />	
 					</Border>
                     
                 </StackPanel>
@@ -728,7 +728,7 @@
             		</ListBox.ItemsPanel>
 				</ListBox>
     			<Button x:Name="btnOpenTestImage" Content="Button" HorizontalAlignment="Left" Margin="18,11.127,0,0" Width="49" Click="btnOpenTestImage_Click" Visibility="Collapsed"/>
-    			<Slider x:Name="sliderImageSize" Margin="0,4,12,0" Minimum="25" Maximum="110" SmallChange="1" Value="80" HorizontalAlignment="Right" Width="129" Grid.Row="2" Height="20.992" VerticalAlignment="Top"/>
+    			<Slider x:Name="sliderImageSize" Margin="0,4,12,0" Minimum="25" Maximum="250" SmallChange="1" Value="80" HorizontalAlignment="Right" Width="129" Grid.Row="2" Height="20.992" VerticalAlignment="Top"/>
     			<Border HorizontalAlignment="Center" Height="263.44" Margin="0" Grid.Row="1" VerticalAlignment="Center" Width="471.554" d:LayoutOverrides="GridBox" Background="#4C000000" Padding="5" CornerRadius="10" Visibility="{Binding Visibility, ElementName=gbAddEditMedia}" >
     				<telerik:GroupBox x:Name="gbAddEditMedia" Foreground="White" Background="#F2020714" Margin="3,0,0,0">
     					<telerik:GroupBox.Header>
@@ -775,7 +775,7 @@
     						<Border BorderBrush="#FF5C5C5C" BorderThickness="1" HorizontalAlignment="Right" Margin="0,72,7,52.27" Width="131.277" Background="Black">
     							<Grid>
     								<Image x:Name="imagePreview" Margin="0" Stretch="Fill"/>
-    								<MediaElement x:Name="mediaElementPreview" Margin="0" Stretch="UniformToFill" MediaOpened="mediaElementPreview_MediaOpened" LoadedBehavior="Manual"/>
+    								<MediaElement x:Name="mediaElementPreview" Margin="0" Stretch="Uniform"  MediaOpened="mediaElementPreview_MediaOpened" LoadedBehavior="Manual"/>
     							</Grid>
     						</Border>
     						<Button x:Name="btnSnap" Content="Button" Height="22.48" Margin="212.277,0,172.277,8" VerticalAlignment="Bottom" Click="btnSnap_Click" Visibility="Collapsed"/>

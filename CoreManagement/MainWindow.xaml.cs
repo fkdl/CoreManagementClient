@@ -188,9 +188,6 @@ namespace CoreManagement
                 snapshotTry++;
                 _snapshotTimer.Start();
             }
-            
-            
-           
         }
 
         private void ConfigureInitialViews()
@@ -1519,8 +1516,11 @@ namespace CoreManagement
                 MediaElement source;
                 source = mediaElementPreview;
 
-                double actualHeight = 79;//source.RenderSize.Height;
-                double actualWidth = 123;//source.RenderSize.Width;
+                //double actualHeight = 79;//source.RenderSize.Height;
+                double actualHeight = 79;
+                //double actualWidth = 123;//source.RenderSize.Width;
+                double actualWidth = 123;
+
                 double renderHeight = actualHeight * scale;
                 double renderWidth = actualWidth * scale;
 
@@ -1551,7 +1551,6 @@ namespace CoreManagement
             }
             catch (Exception ex)
             {
-                
             }
             return imageArray;
         }
@@ -1560,7 +1559,7 @@ namespace CoreManagement
         private void SnapMediaElementPreview()
         {
             string snap = "";
-            byte[] screenshot = GetScreenShot(1, 75);
+            byte[] screenshot = GetScreenShot(2, 75);
             string appPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
             FileStream fileStream = new FileStream(@appPath+@"\Snapshot"+snap+".jpg", FileMode.Create, System.IO.FileAccess.ReadWrite);
             BinaryWriter binaryWriter = new BinaryWriter(fileStream);
